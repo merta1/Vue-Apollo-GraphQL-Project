@@ -1,0 +1,11 @@
+query {
+  viewer {
+    id
+    login
+    company
+    createdAt
+    email
+    location
+		bio
+  }
+}

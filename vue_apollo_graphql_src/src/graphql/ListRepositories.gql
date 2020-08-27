@@ -1,0 +1,12 @@
+query ListRepositories($field:RepositoryOrderField!,$direction:OrderDirection!,$limit:Int!) {
+  repositoryOwner(login:"merta1") {
+    repositories(first:$limit, orderBy:{direction:$direction, field:$field}) {
+      nodes {
+        id
+        name
+        createdAt
+        description
+      }
+    }
+  }
+}
