@@ -4,6 +4,7 @@
 
 ## First clone the Project then
 ```
+cd Vue-Apollo-GraphQL-Project
 cd vue_apollo_graphql_src
 ```
 
@@ -19,6 +20,11 @@ const login = "$GITHUB_USER_NAME";
 headers: {
   'Authorization': "$YOUR_TOKEN"
 }
+
+```
+## Go to vue_apollo_graphql_src folder
+```
+cd Vue-Apollo-GraphQL-Project/vue_apollo_graphql_src
 ```
 
 ## Project setup
