@@ -18,7 +18,7 @@ const login = "$GITHUB_USER_NAME";
 ## Second, go to src/vue-apollo.js change $YOUR_TOKEN to your original Github Token
 ```
 headers: {
-  'Authorization': "$YOUR_TOKEN"
+  'Authorization': "Bearer $YOUR_TOKEN"
 }
 
 ```
