@@ -1,3 +1,3 @@
-const login = "merta1";
+const login = "$GITHUB_USER_NAME ";
 
 export default login;
