@@ -1,10 +1,12 @@
-query ListRepositories($field:RepositoryOrderField!,$direction:OrderDirection!,$limit:Int!) {
-  repositoryOwner(login:"merta1") {
+query ListRepositories($login:String!, $field:RepositoryOrderField!,$direction:OrderDirection!,$limit:Int!) {
+  repositoryOwner(login:$login) {
     repositories(first:$limit, orderBy:{direction:$direction, field:$field}) {
       nodes {
         id
         name
         createdAt
+        updatedAt
+        pushedAt
         description
       }
     }

@@ -1,0 +1,23 @@
+query ListCommentsOfIssue($login:String!, $repositoryName:String!, $issueNumber:Int!, $numberOfComments:Int!){
+  repositoryOwner(login:$login) {
+    repository(name:$repositoryName) {
+      project(number:1) {
+        id
+        number
+      }
+      issue(number:$issueNumber) {
+        id
+        title
+        body
+        comments(first:$numberOfComments) {
+          nodes {
+            body
+            author {
+              login
+            }
+          }
+        }
+      }
+    }
+  }
+}

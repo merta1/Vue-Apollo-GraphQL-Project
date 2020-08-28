@@ -39,7 +39,7 @@ var defaultOptions = {
   // Header Details
   httpLinkOptions: {
     headers: {
-      'Authorization': "Bearer 27b1b899d5881f24f50949f259b367220a1e80ee"
+      'Authorization': "Bearer "
     }
   },
   // You can use `wss` for secure connection (recommended in production)

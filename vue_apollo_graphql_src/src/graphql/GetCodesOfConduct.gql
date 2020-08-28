@@ -1,0 +1,10 @@
+query {
+  codesOfConduct {
+    id
+    body
+    key
+    name
+    resourcePath
+    url
+  }
+}

@@ -1,0 +1,17 @@
+mutation AddComment($input:AddCommentInput!){
+  addComment(input:$input) {
+    clientMutationId
+    commentEdge {
+      cursor
+      node{
+        body
+      }
+    }
+    subject {
+      id
+    }
+    timelineEdge {
+      cursor
+    }
+  }
+}

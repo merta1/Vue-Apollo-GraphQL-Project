@@ -1,38 +1,36 @@
 <template>
   <div class="app">
-    <div class="welcome-display">
-      <h2>Welcome to Github Account Viewer</h2>
-    </div>
-    <PersonalInfo />
-    <br>
-    <ListRepositories />
+    <Header />
+    <router-view />
   </div>
 </template>
 
 <script>
-import PersonalInfo from './components/PersonalInfo.vue';
-import ListRepositories from "./components/ListRepositories.vue";
+import Header from "./layout/Header";
 
 export default {
   name: 'App',
   components: {
-    PersonalInfo,
-    ListRepositories
+    Header
   },
 }
 </script>
 
 <style>
+    * {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+  }
+
   .app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* text-align: center; */
-    /* color: #2c3e50; */
     margin-top: 25px;
     margin-left: 10%;
     margin-right: 10%;
-    /* background-color: beige; */
+    line-height:1.4;
   }
 
   .welcome-display {

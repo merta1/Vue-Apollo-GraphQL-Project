@@ -1,8 +1,8 @@
 <template>
   <div class="list-repos-container">
-    <h3>List Repositories</h3>
+    <h3>List Of Repositories</h3>
     <br />
-    <div >
+    <div class="custom-select" >
       <div class="inner-grid">
         <div class="repos-div">
           <label for="repositories_attribute">Sort repositories by: </label>
@@ -32,6 +32,9 @@
         </div>
       </div>
       <br />
+      <div class='note'>
+        Click on Repositoriy to see its issues!
+      </div>
       <div class="list-repos">
         <ApolloQuery :query="require('../graphql/ListRepositories.gql')" :variables="{login, field: selected, direction: orderType, limit }">
             <template v-slot="{ result: {loading, error, data}}">
@@ -42,14 +45,12 @@
                     <thead>
                       <tr>
                         <th>Repository Name</th>
-                        <th>Descreption</th>
                         <th>{{columnName}}</th>
                       </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="repo in data.repositoryOwner.repositories.nodes" :key="repo.id">
+                        <tr v-for="repo in data.repositoryOwner.repositories.nodes" :key="repo.id" v-on:click="clickList('messageFromListRepositoriesNameField',repo.name, repo.id)">
                           <td>{{repo.name}}</td>
-                          <td class="toLeft">{{repo.description}}</td>
                           <td>{{repo[columnData].split("T")[0]}}</td>
                         </tr>
                     </tbody>
@@ -66,7 +67,7 @@
 import login from "../login";
 
 export default {
-  name:"ListRepositories",
+  name:"ListRepositoriesNameField",
   data() {
     return {
       selected: 'CREATED_AT',
@@ -92,6 +93,11 @@ export default {
         this.columnName = "Pushed Time";
         this.columnData = "pushedAt";
       } 
+    },
+    clickList(fieldName, name, id) {
+      console.log(name);
+      console.log("namefield", id);
+      this.$emit(fieldName, name, id);
     }
   }
 }
@@ -146,5 +152,9 @@ export default {
 
   h3 {
     padding: 5px;
+  }
+
+  .note {
+    color: gray;
   }
 </style>

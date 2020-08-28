@@ -12,7 +12,7 @@
                         <label><b>Email:</b> {{data.viewer.email}}</label>
                         <label><b>Location:</b> {{data.viewer.location}} </label>
                         <label><b>Bio:</b> {{data.viewer.bio}}</label>
-                        <label><b>Account Created at:</b> {{data.viewer.createdAt}} </label>
+                        <label><b>Account Created at:</b> {{data.viewer.createdAt.split("T")[0]}} </label>
                     </div>
                 </div>
             </template>    
@@ -31,16 +31,14 @@ export default {
 <style scoped>
     .my-info-container {
         background-color:white;
-        border: Blue 1px solid;
+        border: lightgreen 3px solid;
         padding: 0px 15px 15px 15px;
+        /* border-radius: 1%; */
     }
     #my-info-data {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
-        /* grid-column-gap: 1em; */
         grid-gap:1em;
-        /* grid-auto-rows: minmax(50px, auto); */
-        /* border:blue 2px solid; */
     }
 
     label {
@@ -50,5 +48,7 @@ export default {
         padding: 8px;
     }
 
- 
+    h3 {
+        padding: 5px;
+    }
 </style>

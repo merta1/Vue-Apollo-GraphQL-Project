@@ -1,0 +1,14 @@
+query marketPlaceListings($limit:Int){
+  marketplaceListings(first:$limit) {
+    nodes {
+      app {
+        id
+        name
+        updatedAt
+        description
+        createdAt
+        url
+      }
+    }
+  }
+}

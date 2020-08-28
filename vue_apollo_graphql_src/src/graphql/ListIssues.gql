@@ -1,0 +1,21 @@
+query ListIssues($login:String!,$repositoryName:String!, $numberOfIssues:Int!){
+  repositoryOwner(login: $login) {
+    repository(name:$repositoryName) {
+      project(number:1) {
+        id
+      }
+      issues(first:$numberOfIssues) {
+        nodes {
+          id
+          number
+          title
+          body
+          closed
+          author {
+            login
+          }
+        }
+      }
+    }
+  }
+}
