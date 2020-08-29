@@ -1,15 +1,15 @@
 <template>
   <div>
-    <CodesOfConduct />
+    <CodesOfConductComponant />
   </div>
 </template>
 
 <script>
-import CodesOfConduct from "../components/CodesOfConduct";
+import CodesOfConductComponant from "../components/CodesOfConduct";
 export default {
   name:"CodesOfConduct",
   components: {
-    CodesOfConduct
+    CodesOfConductComponant
   }
 }
 </script>
